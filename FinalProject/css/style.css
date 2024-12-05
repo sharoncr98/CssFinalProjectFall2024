@@ -1,10 +1,13 @@
 /* setting the body margin and padding to 0, using complementary color scheme, and custom font*/
 body{
-    margin: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
     padding: 0;
     font-family: "Teko", sans-serif;;
     background-color: #dc624c;
     color: #0e0e0e;
+    margin-bottom: 40px;
 }
 header{
     display: flex;
@@ -15,6 +18,7 @@ header{
     color: #4cc6dc;
     position: relative;
     z-index: 999;
+    transition: all 0.3s ease-in-out;
 
 }
 .logo-container {
@@ -42,6 +46,52 @@ header{
 .header-menu menu li a {
     text-decoration: none; /* Removes the underline from the links */
     color: #0e0e0e /* Ensures the text color remains as per your design */
+}
+header .header-menu menu li a {
+    text-decoration: none;
+    color: #0e0e0e;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 1px;
+}
+
+/* Apply same hover effect to all menu items */
+header .header-menu menu li a:hover {
+    background-color: #4cc6dc;  /* Light blue background */
+    padding: 5px; /* Add padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    transform: scale(1.1); /* Zoom in effect */
+    letter-spacing: 2px;
+}
+
+/* Optionally, smooth transition for the hover effects */
+header .header-menu menu li a {
+    transition: all 0.3s ease-in-out;
+}
+header.minimized {
+    padding: 5px 20px; /* Reduced padding */
+    background-color: rgba(0, 0, 0, 0.7); /* Optionally change background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
+}
+
+header .logo img {
+    height: 100px; /* Reduce the logo size when minimized */
+    transition: all 0.3s ease-in-out; /* Smooth transition for logo */
+}
+
+/* When header is minimized, logo will shrink */
+header.minimized .logo img {
+    height: 80px; /* Smaller logo size */
+}
+
+header .header-menu menu li a {
+    font-size: 1em; /* Reduce the font size of the navigation links */
+    transition: all 0.3s ease-in-out; /* Smooth transition for font size */
+}
+
+/* When header is minimized, link font size will decrease */
+header.minimized .header-menu menu li a {
+    font-size: 0.9em; /* Smaller font size */
 }
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
@@ -95,6 +145,7 @@ header{
     gap: 20px; /* Space between columns */
     padding: 40px 20px; /* Padding around the section */
     margin-top: 150px;
+    margin-bottom: 100px;
     background-color: transparent;
     color: #f1f1f1; /* Light text color for better visibility */
     text-align: center; /* Align text to the left */
@@ -121,10 +172,11 @@ header{
 
 /* Hover effect */
 .faq-item:hover {
-    transform: scale(1.05); /* Zoom in (scale up by 5%) */
+    transform: translateY(-5px);; /* Zoom in (scale up by 5%) */
     box-shadow: 0 6px 12px rgba(220, 98, 76, 0.4);
     background-color: rgba(76, 198, 220, 0.6);
     transition: transform 0.5s ease, box-shadow 0.8s ease;
+
 }
 
 /* Styling for the question and answer text */
@@ -138,11 +190,112 @@ header{
     font-size: 1.2em;
     color: #EDE6DB; /* Slightly lighter text for the answer */
 }
+#footer {
+    width: 100%;
+    background-color: #dc624c;
+    color: #4cc6dc;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /* Make sure footer stays on top */
+    transition: all 0.5s ease-in-out; /* Smooth transition */
+    height: 80px; /* Initial small height */
+    overflow: hidden; /* Hide content when small */
 
+}
+
+#footer.expanded {
+    height: 300px; /* Increased height when expanded */
+    overflow: visible; /* Show content */
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* Footer Information */
+.footer-info {
+    flex: 1;
+    font-family: "Noto Serif", serif;
+}
+
+/* Footer Contact Section */
+.footer-contact {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer-contact h3 {
+    font-family: "Teko", sans-serif;
+    color: #4cc6dc;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+.footer-contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Set a max width for the form */
+}
+.footer-contact form input,
+.footer-contact form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #d3d3d3;
+    font-size: 1em;
+    border: 1px solid #4cc6dc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    max-width: 100%; /* Ensures the form inputs never exceed the form width */
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.footer-contact form button {
+    padding: 10px 20px;
+    background-color: #4cc6dc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.footer-contact form button:hover {
+    background-color: #dc624c;
+}
 /* Responsive styling for smaller screens (2 columns on small screens) */
 @media (max-width: 768px) {
     .faq {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+        grid-template-columns: 1fr; /* Stack FAQ items vertically on smaller screens */
+    }
+    .faq-item {
+        padding: 15px;
+    }
+
+    .faq-item h3 {
+        font-size: 1.2em;
+    }
+
+    .faq-item p {
+        font-size: 0.95em;
+    }
+
+    .faq h2 {
+        font-size: 1.8em; /* Slightly smaller title on smaller screens */
     }
 }
 
@@ -150,6 +303,21 @@ header{
 @media (max-width: 480px) {
     .faq {
         grid-template-columns: 1fr; /* 1 column on mobile devices */
+    }
+    .faq h2 {
+        font-size: 1.5em; /* Further reduce font size for very small screens */
+    }
+
+    .faq-item {
+        padding: 10px; /* Reduce padding in FAQ items */
+    }
+
+    .faq-item h3 {
+        font-size: 1.1em;
+    }
+
+    .faq-item p {
+        font-size: 0.9em;
     }
 }
 
