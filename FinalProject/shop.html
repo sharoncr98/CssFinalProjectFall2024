@@ -13,8 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <!-- Css file -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- add js -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/finalproject.js"></script>
 </head>
-<body>
+<body class = "shop-page">
 <header>
     <!-- div for logo -->
     <div class = "logo-container">
@@ -31,34 +34,45 @@
         </menu>
     </nav>
 </header>
-
-
-
-
-
-
-
-
+<main>
 <!-- section that contains the product pictures and description -->
 <section class="products">
-    <h1>Taste the most amazing chocolate snack ever existed</h1>
+    <h1>Our Services</h1>
     <div class="product-container">
-        <!-- Product Picture 1 -->
+        <!-- product 1 -->
         <div class="product">
-            <img src="" alt="">
-            <p class="description">Kinder Bueno is a unique chocolatey and hazelnut cream candy bar with a taste experience that defies expectation.</p>
+            <img src="./img/OilChange.png" alt="OilChange">
+            <p class="description">Oil Change</p>
+            <a href="product1.html" class="book-now">Book Now</a>
         </div>
-        <!-- Product Picture 2 -->
+        <!-- product 2 -->
         <div class="product">
-            <img src="" alt="">
-            <p class="description">Beneath a blanket of smooth milk chocolate lies a thin, crispy wafer filled with a creamy hazelnut filling, all topped with a delicate, dark chocolate drizzle.</p>
+            <img src="./img/Inspection.png" alt="Inspection">
+            <p class="description">Inspection</p>
+            <a href="product2.html" class="book-now">Book Now</a>
         </div>
-        <!-- Product Picture 3 -->
+        <!-- product 3 -->
         <div class="product">
-            <img src="" alt="">
-            <p class="description">Both individually wrapped Kinder Bueno bars are satisfying but not heavy, with a texture that is anything but expected.</p>
+            <img src="./img/Exterior.png" alt="Paint">
+            <p class="description">Paint Correction And Accident Repair</p>
+            <a href="product3.html" class="book-now">Book Now</a>
         </div>
     </div>
 </section>
+</main>
+<footer>
+    <div class="footer-container">
+        <!-- contact form -->
+        <div class="footer-contact">
+            <h3>For More Info:</h3>
+            <form action="#" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message"  placeholder="Type your message..." required></textarea>
+                <button type="submit">Talk To Us!</button>
+            </form>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
