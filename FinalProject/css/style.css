@@ -9,6 +9,7 @@ body{
     color: #0e0e0e;
     margin-bottom: 40px;
 }
+/*Home page styling and header, and footer. I went with complementary color scheme. The header will be transparent on scroll down */
 header{
     display: flex;
     justify-content: space-between;
@@ -19,17 +20,17 @@ header{
     position: relative;
     z-index: 999;
     transition: all 0.3s ease-in-out;
-
 }
 .logo-container {
     display: flex;
     align-items: center;
-
 }
+/*Logo image is maintaining aspect ratio */
 .logo img {
     height: 100px;
     width: auto;
 }
+/*removing the underline and bullets points from the menu items */
 .header-menu menu {
     display: flex;
     list-style: none;
@@ -37,16 +38,17 @@ header{
     padding: 0;
     margin: 0;
 }
+/*adding space between list items */
 .header-menu menu li {
-    margin-right: 50px; /* Add space between list items */
+    margin-right: 50px;
     font-size: 1.2em;
     font-family: "Noto Serif", serif;
-
 }
 .header-menu menu li a {
-    text-decoration: none; /* Removes the underline from the links */
-    color: #0e0e0e /* Ensures the text color remains as per your design */
+    text-decoration: none;
+    color: #0e0e0e;
 }
+/*adding letter spacing and ease in out effect for the a items */
 header .header-menu menu li a {
     text-decoration: none;
     color: #0e0e0e;
@@ -54,46 +56,44 @@ header .header-menu menu li a {
     transition: all 0.3s ease-in-out;
     letter-spacing: 1px;
 }
-
-/* Apply same hover effect to all menu items */
+/* hover effects to menu items, maintaining the color scheme. */
 header .header-menu menu li a:hover {
-    background-color: #4cc6dc;  /* Light blue background */
-    padding: 5px; /* Add padding around the text */
-    border-radius: 5px; /* Rounded corners */
-    transform: scale(1.1); /* Zoom in effect */
+    background-color: #4cc6dc;
+    padding: 5px;
+    border-radius: 5px;
+    transform: scale(1.1);
     letter-spacing: 2px;
 }
-
-/* Optionally, smooth transition for the hover effects */
+/* adding transition for the hover effects */
 header .header-menu menu li a {
     transition: all 0.3s ease-in-out;
 }
+/*styling the minimized header, adding box shadow and changing the background color to transparent*/
 header.minimized {
-    padding: 5px 20px; /* Reduced padding */
-    background-color: rgba(0, 0, 0, 0.7); /* Optionally change background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
+    padding: 5px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-
+/*reducing the logo size, and transition for the logo */
 header .logo img {
-    height: 100px; /* Reduce the logo size when minimized */
-    transition: all 0.3s ease-in-out; /* Smooth transition for logo */
+    height: 100px;
+    transition: all 0.3s ease-in-out;
 }
-
-/* When header is minimized, logo will shrink */
+/*minimizing the logo on js event listening*/
 header.minimized .logo img {
-    height: 80px; /* Smaller logo size */
+    height: 80px;
 }
-
+/*reducing the font size of nav items, and transition */
 header .header-menu menu li a {
-    font-size: 1em; /* Reduce the font size of the navigation links */
-    transition: all 0.3s ease-in-out; /* Smooth transition for font size */
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
 }
-
-/* When header is minimized, link font size will decrease */
+/*li font size decrease */
 header.minimized .header-menu menu li a {
-    font-size: 0.9em; /* Smaller font size */
+    font-size: 0.9em;
 }
-/* Style the video: 100% width and height to cover the entire window */
+/* background videos styling, 100% width and height to cover the entire window. Also z index -1 insuring it doesnt cover anything
+ and object cover so it will be on the entire page ad background*/
 #myVideo {
     position: fixed;
     top: 0;
@@ -103,93 +103,366 @@ header.minimized .header-menu menu li a {
     object-fit: cover;
     z-index: -1;
 }
-
+/*styling the welcome section so it will be over the video, centered and setting the text color */
 .main-content {
     position: relative;
-    z-index: 3; /* Make sure the content is above the video */
-    padding: 100px 20px 20px; /* Add padding at the top to avoid overlap with the fixed video */
-    text-align: center; /* Center the text */
-    color: #f1f1f1; /* Light color for the text */
+    z-index: 3;
+    padding: 100px 20px 20px;
+    text-align: center;
+    color: #f1f1f1;
 }
-
+/*setting the font size, font family, margin from the next section, making the heading uppercase, and adding shadow. */
 .main-content h1 {
-    font-size: 3em; /* Larger font size for the heading */
+    font-size: 3em;
     font-family: "Noto Serif", serif;
-    margin-bottom: 20px; /* Space below the heading */
-    color: #f1f1f1; /* White text color */
-    text-transform: uppercase; /* Make the heading uppercase */
+    margin-bottom: 20px;
+    color: #f1f1f1;
+    text-transform: uppercase;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
+/*adding an hover effect with the color scheme and smooth transition*/
 .main-content h1:hover {
-    color: #4cc6dc; /* Change color on hover (for example, a yellow shade) */
-    transition: color 0.5s ease-in-out; /* Smooth transition */
+    color: #4cc6dc;
+    transition: color 0.5s ease-in-out;
 }
+/*setting the content font size, family, color, height, and transition */
 .main-content p {
-    font-size: 1.4em; /* Slightly larger font size for readability */
+    font-size: 1.4em;
     font-family: "Teko", sans-serif;
-    color: #f1f1f1; /* White text color */
-    line-height: 1.6; /* Increase line height for better readability */
-    max-width: 800px; /* Limit the width of the paragraph */
-    margin: 0 auto; /* Center the paragraph */
-    padding: 0 20px; /* Add padding on the left and right */
+    color: #f1f1f1;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
+/*on hover changing the text color, scale, and cursor to pointer */
 .main-content p:hover{
-    color: #dc624c; /* Change text color on hover */
-    transform: scale(1.05); /* Slightly increase the size of the paragraph */
-    cursor: pointer; /* Change cursor to a pointer to indicate it's interactive */
+    color: #dc624c;
+    transform: scale(1.05);
+    cursor: pointer;
 }
+/*the faq section will be using Grid as its 3 columns. Setting the z index, background color to completely transparent.
+  */
 .faq {
-    display: grid; /* Enable grid layout */
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
-    gap: 20px; /* Space between columns */
-    padding: 40px 20px; /* Padding around the section */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px 20px;
     margin-top: 150px;
     margin-bottom: 100px;
     background-color: transparent;
-    color: #f1f1f1; /* Light text color for better visibility */
-    text-align: center; /* Align text to the left */
-    border-radius: 10px; /* Optional: rounded corners */
+    color: #f1f1f1;
+    text-align: center;
+    border-radius: 10px;
     z-index: 1;
 }
-
+/*styling the h2, length over all columns, font size, margin from the bottom elements, and shadow. */
 .faq h2 {
-    grid-column: span 3; /* Make the heading span across all columns */
+    grid-column: span 3;
     font-size: 2.5em;
     margin-bottom: 20px;
-    text-align: center; /* Center-align the heading */
-    color: #dc624c; /* Light color for heading */
+    text-align: center;
+    color: #dc624c;
     text-shadow: 2px 2px 8px rgba(0, 0, 200, 0.3);
 }
-
+/*the items will have a background semi transparent color, rounded corners and smooth transition*/
 .faq-item {
-    background-color: rgba(220, 98, 76, 0.8); /* Almost transparent white background */
+    background-color: rgba(220, 98, 76, 0.8);
     padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1); /* Subtle shadow for each item */
-    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for transform and shadow */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 255, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
-
-/* Hover effect */
+/* hover effects for the faq section */
 .faq-item:hover {
-    transform: translateY(-5px);; /* Zoom in (scale up by 5%) */
+    transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(220, 98, 76, 0.4);
     background-color: rgba(76, 198, 220, 0.6);
     transition: transform 0.5s ease, box-shadow 0.8s ease;
-
 }
-
-/* Styling for the question and answer text */
+/* styling the question and answer texts */
 .faq-item h3 {
     font-size: 1.6em;
     margin-bottom: 10px;
-    color: #0e0e0e; /* Dark text for the question */
+    color: #0e0e0e;
 }
-
 .faq-item p {
     font-size: 1.2em;
-    color: #EDE6DB; /* Slightly lighter text for the answer */
+    color: #EDE6DB;
 }
+/* product Section, using gradient colors and flex box*/
+.shop-page {
+    background: linear-gradient(180deg, #dc624c, #0e0e0e);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+.products {
+    padding: 40px 20px;
+    text-align: center;
+}
+/* using grid to style each product card */
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background: linear-gradient(180deg, #dc624c, #0e0e0e);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    animation: bounce 1s ease-out;
+}
+.product img {
+    width: 80%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 5px;
+}
+.product .description {
+    font-size: 2.2em;
+    color: #fff;
+    margin-bottom: 40px;
+}
+/* styling the buttons */
+.book-now {
+    background-color: #4cc6dc;
+    color: #EDE6DB;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+/* using a custom keyframe effect */
+.book-now:hover {
+    background-color: #2a99b8;
+    animation: shake ease-in-out 0.5s;
+}
+/*product 1 styling */
+.oil-change-service {
+    background: #EDE6DB;
+    padding: 50px 20px;
+    text-align: center;
+}
+/* heading Styling */
+.oil-change-service h1 {
+    font-size: 2.5em;
+    color: #dc624c;
+    margin-bottom: 20px;
+    font-family: "Teko", sans-serif;
+}
+/* image Styling */
+.oil-change-img-container img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+/* paragraph styling */
+.oil-tech-story {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+    font-family: "Noto Serif", serif;
+    max-width: 800px;
+    margin: 0 auto;
+}
+/*giving the btn container some space from above  */
+.call-us-btn-container {
+    margin-top: 30px;
+}
+/* call Us button, rounded border and transitioning the background color on hover */
+.call-us-btn {
+    background-color: #dc624c;
+    color: #EDE6DB;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.5s;
+}
+.call-us-btn:hover {
+    background-color: #4cc6dc;
+}
+.inspection-service {
+    background: #EDE6DB;
+    padding: 50px 20px;
+    text-align: center;
+}
+/* h1 styling, font size and family, margin from the bottom */
+.inspection-service h1 {
+    font-size: 2.5em;
+    color: #dc624c;
+    margin-bottom: 20px;
+    font-family: "Teko", sans-serif;
+}
+/* image sizing */
+.inspection-img-container img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+/* paragraph styling, font size and family */
+.inspection-story {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+    font-family: "Noto Serif", serif;
+    max-width: 800px;
+    margin: 0 auto;
+}
+/* call Us button adding space from the paragraph */
+.call-us-btn-container {
+    margin-top: 30px;
+}
+/* third service styling*/
+.paint-repair-service {
+    background: #EDE6DB;
+    padding: 50px 20px;
+    text-align: center;
+}
+/* h1 styling, size font family and color */
+.paint-repair-service h1 {
+    font-size: 2.5em;
+    color: #dc624c;
+    margin-bottom: 20px;
+    font-family: "Teko", sans-serif;
+}
+/* img sizing */
+.paint-repair-img-container img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+/* paragraph styling, font family and size, color. */
+.paint-repair-story {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+    font-family: "Noto Serif", serif;
+    max-width: 800px;
+    margin: 0 auto;
+}
+/* contact us page styling */
+.contact {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #EDE6DB;
+    margin-bottom: 180px;
+}
+.contact h1 {
+    font-size: 2.5em;
+    color: #dc624c;
+    font-family: "Teko", sans-serif;
+    margin-bottom: 20px;
+}
+/* setting the email and phone margins */
+.contact-item {
+    margin: 20px 0;
+}
+.contact-item h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+/*paragraph font size and color */
+.contact-item p {
+    font-size: 1.2em;
+    color: #333;
+}
+/* custom keyframes for animations. */
+@keyframes fadeIn1 {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* when loading the contact us page, the text will fade in. */
+.contact-item {
+    animation: fadeIn 1s ease-out;
+}
+/* about us page styling */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* text will slide from the side on page load */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* shake effect - mainly on hover */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* about styling, gradient coloring, text color, flexbox and centred content. */
+.about-us {
+    background: linear-gradient(180deg, #dc624c, #0e0e0e);
+    color: #EDE6DB;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+/* h1 styling with effect from keyframes */
+.about-us h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+/* paragraph styling and effect from keyframes */
+.about-us p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: slideIn 1.5s ease-out;
+}
+/*styling the footer */
 #footer {
     width: 100%;
     background-color: #dc624c;
@@ -199,33 +472,19 @@ header.minimized .header-menu menu li a {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 10; /* Make sure footer stays on top */
-    transition: all 0.5s ease-in-out; /* Smooth transition */
-    height: 80px; /* Initial small height */
-    overflow: hidden; /* Hide content when small */
-
+    z-index: 10;
+    transition: all 0.5s ease-in-out;
+    height: 80px;
+    overflow: hidden;
 }
-
-#footer.expanded {
-    height: 300px; /* Increased height when expanded */
-    overflow: visible; /* Show content */
-}
-
-/* Footer Container */
+/* footer container, display flex with centered items */
 .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
 }
-
-/* Footer Information */
-.footer-info {
-    flex: 1;
-    font-family: "Noto Serif", serif;
-}
-
-/* Footer Contact Section */
+/* footer contact section, centered. */
 .footer-contact {
     flex: 2;
     display: flex;
@@ -235,20 +494,22 @@ header.minimized .header-menu menu li a {
     padding-left: 20px;
     padding-right: 20px;
 }
-
+/*h3 custom font, color and margin from the other form elements */
 .footer-contact h3 {
     font-family: "Teko", sans-serif;
     color: #4cc6dc;
     font-size: 1.5em;
     margin-bottom: 20px;
 }
+/*setting the max size of the form */
 .footer-contact form {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 400px; /* Set a max width for the form */
+    max-width: 400px;
 }
+/*styling the textarea and inputs with shadows, background color and border color */
 .footer-contact form input,
 .footer-contact form textarea {
     width: 100%;
@@ -258,12 +519,12 @@ header.minimized .header-menu menu li a {
     font-size: 1em;
     border: 1px solid #4cc6dc;
     border-radius: 5px;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
-    max-width: 100%; /* Ensures the form inputs never exceed the form width */
+    box-sizing: border-box;
+    max-width: 100%;
     text-align: center;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
-
+/*footer button styling, cursor change, color and transition */
 .footer-contact form button {
     padding: 10px 20px;
     background-color: #4cc6dc;
@@ -273,49 +534,42 @@ header.minimized .header-menu menu li a {
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
-
+/*changing the color of the button on hover */
 .footer-contact form button:hover {
     background-color: #dc624c;
 }
-/* Responsive styling for smaller screens (2 columns on small screens) */
+/* responsive styling for the faq section*/
 @media (max-width: 768px) {
     .faq {
-        grid-template-columns: 1fr; /* Stack FAQ items vertically on smaller screens */
+        grid-template-columns: 1fr;
     }
     .faq-item {
         padding: 15px;
     }
-
     .faq-item h3 {
         font-size: 1.2em;
     }
-
     .faq-item p {
         font-size: 0.95em;
     }
-
     .faq h2 {
-        font-size: 1.8em; /* Slightly smaller title on smaller screens */
+        font-size: 1.8em;
     }
 }
-
-/* Responsive styling for even smaller screens (1 column on mobile) */
+/* responsive styling for mobile screens*/
 @media (max-width: 480px) {
     .faq {
-        grid-template-columns: 1fr; /* 1 column on mobile devices */
+        grid-template-columns: 1fr;
     }
     .faq h2 {
-        font-size: 1.5em; /* Further reduce font size for very small screens */
+        font-size: 1.5em;
     }
-
     .faq-item {
-        padding: 10px; /* Reduce padding in FAQ items */
+        padding: 10px;
     }
-
     .faq-item h3 {
         font-size: 1.1em;
     }
-
     .faq-item p {
         font-size: 0.9em;
     }
